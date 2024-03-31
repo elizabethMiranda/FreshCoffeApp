@@ -1,7 +1,9 @@
-import { categorias } from "../data/categorias"
 import { Categoria } from "./Categoria"
 import short from 'short-uuid'
+import { useQuiosco } from "../hooks/useQuiosco"
+
 export const Sidebar = () => {
+    const {categorias} = useQuiosco()
   return (
     <aside className="md:w-72">
         <div className="p-4">
