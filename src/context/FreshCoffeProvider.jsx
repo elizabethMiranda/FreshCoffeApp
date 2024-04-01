@@ -9,18 +9,32 @@ export const FreshCoffeProvider = ({children}) => {
 
   const [categorias, setCategorias] = useState(categoriasDB);
   const [categoriaActual, setCategoriaActual] = useState(categoriasDB[0]);
+  const [modal, setModal] = useState(false);
+  const [producto, setProducto] = useState({});
   
   const handleClickCategoria = id => {
     const categoriaFiltrada = categorias.filter(categoria => categoria.id === id)[0];
     console.log('categoriaFiltrada', categoriaFiltrada);
     setCategoriaActual(categoriaFiltrada);
   }
+
+  const handleClickModal = () => {
+    setModal(!modal);
+  }
+
+  const handleSetProducto = producto => {
+    setProducto(producto);
+  }
   return (
     <FreshCofeeContext.Provider 
     value={{
       categorias,
       categoriaActual,
-      handleClickCategoria
+      handleClickCategoria,
+      modal,
+      handleClickModal,
+      producto,
+      handleSetProducto
     }}
     >
         {children}

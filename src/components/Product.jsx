@@ -1,9 +1,11 @@
 import { formateaDinero } from "../helpers";
 import PropTypes from 'prop-types';
+import { useQuiosco } from "../hooks/useQuiosco";
 
 export const Product = ({producto}) => {
 
     const {nombre, precio, imagen} = producto;
+    const {handleClickModal, handleSetProducto} = useQuiosco();
 
   return (
     <div className="border p-3 shadow bg-white">
@@ -23,6 +25,7 @@ export const Product = ({producto}) => {
         <button
           type="button"
           className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold"
+          onClick={()=>{handleClickModal(); handleSetProducto(producto);}}
         >
           Agregar
         </button>
