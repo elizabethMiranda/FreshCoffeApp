@@ -11,6 +11,7 @@ export const FreshCoffeProvider = ({children}) => {
   const [categoriaActual, setCategoriaActual] = useState(categoriasDB[0]);
   const [modal, setModal] = useState(false);
   const [producto, setProducto] = useState({});
+  const [pedido, setPedido] = useState([]);
   
   const handleClickCategoria = id => {
     const categoriaFiltrada = categorias.filter(categoria => categoria.id === id)[0];
@@ -34,7 +35,8 @@ export const FreshCoffeProvider = ({children}) => {
       modal,
       handleClickModal,
       producto,
-      handleSetProducto
+      handleSetProducto,
+      pedido,
     }}
     >
         {children}
