@@ -3,6 +3,8 @@ import { Sidebar } from '../components/Sidebar';
 import { Resumen } from '../components/Resumen';
 import { useQuiosco } from '../hooks/useQuiosco';
 import Modal from 'react-modal';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import { ModalProducto } from '../components/ModalProducto';
 
 const customStyles = {
@@ -17,8 +19,7 @@ const customStyles = {
 };
 Modal.setAppElement("#root");
 export const Layout = () => {
-  const { modal, handleClickModal, producto, handleSetProducto } = useQuiosco()
-  console.log('modal', modal);
+  const { modal, producto } = useQuiosco()
   return (
   <>
     <div className='md:flex'>
@@ -35,6 +36,7 @@ export const Layout = () => {
         </Modal>
       )
     }
+    <ToastContainer />
     </>
   )
 }

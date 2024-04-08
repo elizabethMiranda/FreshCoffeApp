@@ -13,7 +13,7 @@ export const PageInicio = () => {
       <p className="text-2xl my-10">
         Elige y personaliza tu pedido
       </p>
-      <div className="grid gap-4 grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="grid gap-4 grid-cols-3 md:grid-cols-3 lg:grid-cols-5">
         {getproductos.map((producto) => (
           <Product key={short.generate()}
           producto={producto}
